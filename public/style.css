@@ -1,92 +1,152 @@
-body{
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgb(255, 255, 255);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-.navbar{
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #c7d1db;
     display: flex;
-    justify-content:space-evenly;
-    width:80%;
-    height:5vh;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px 0;
+}
+
+.container {
+    width: 82%;
+    max-width: 900px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgba(102, 176, 241, 1);
-    color: white;
-    border-radius:45px;
+    background: #1e3a5f;
+    padding: 14px 24px;
+    border-radius: 12px;
+    margin-bottom: 24px;
 }
 
-#logo{
-    width:40px;
-    height:auto;
-    filter: invert(30%) sepia(100%) saturate(500%) hue-rotate(200deg);
+.navbar img#logo {
+    width: 36px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
 }
 
-.navbarbuttons{
-    background-color:rgba(240, 255, 255, .3);
-    border:none;
-    width:100px;
-    border-radius:45px;
-    backdrop-filter: 5px;
-    color:aliceblue;
-}
-
-.content,.homecontent{
-    display:block;
-    align-items: center;
-}
-
-.contenttitle,.label,.btns,.splash{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:rgb(102, 176, 241); 
-
-}
-
-.splash{
-    font-style: italic;
-}
-
-.label,.field,.btns{
-    margin-top:10px;
-}
-
-.label {
-    display: inline-block;
-    width: 150px; 
-    font-weight: bold;
-}
-
-.field {
-    display: inline-block;
-    width: 250px; 
-    padding: 5px;
-    box-sizing: border-box; 
-}
-
-.btns{
-    width:182px;
-    padding:3px;
-}
-
-#btncontainer{
-    display:flex;
-    gap:20px;
-}
-
-/* For the insertion success message */
-#success-toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
+.navbar a, .navbar button {
+    color: #a8c8f0;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 6px 14px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: opacity 0.5s ease-in-out;
-    z-index: 1000;
+    border: 1px solid #2e5080;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.toast-hidden {
+.navbar a:hover, .navbar button:hover {
+    background: #2e5080;
+    color: #fff;
+}
+
+/* Page sections */
+.content, .homecontent {
     display: none;
-    opacity: 0;
+}
+
+#home {
+    display: block;
+}
+
+/* Card wrapper for sections */
+.content, .homecontent {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px 32px;
+    border: 0.5px solid #dce4ef;
+    margin-top: 20px;
+}
+
+.content h2, .homecontent h2 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #1e3a5f;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid #dce4ef;
+}
+
+/* Form */
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1dbe8;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1e3a5f;
+    background: #f8fafc;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: #4a90d9;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.12);
+}
+
+/* Buttons */
+button {
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    background: #1e3a5f;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #2e5080;
+}
+
+/* Edit / Delete action buttons */
+button.edit-btn {
+    background: #eaf3fb;
+    color: #1a6abf;
+    border: 1px solid #b5d4f4;
+    padding: 5px 12px;
+    font-size: 12px;
+}
+
+button.delete-btn {
+    background: #fdf0f0;
+    color: #c0392b;
+    border: 1px solid #f7c1c1;
+    padding: 5px 12px;
+    font-size: 12px;
+}
+
+button.edit-btn:hover { background: #d0e8f8; }
+button.delete-btn:hover { background: #f9dada; }
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 13px;
 }
